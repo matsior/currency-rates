@@ -1,0 +1,17 @@
+<Context>
+    <Resource name="jdbc/kursy_walut_4k"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              type="javax.sql.DataSource"
+              username="root"
+              password="1234"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/kursy_walut_4k?serverTimezone=UTC"/>
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           dataSourceName="jdbc/kursy_walut_4k"
+           localDataSource="true"
+           userTable="user_account"
+           userNameCol="nick"
+           userCredCol="password"
+           userRoleTable="user_account"
+           roleNameCol="role_name"/>
+</Context>
