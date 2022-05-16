@@ -13,6 +13,6 @@ public class CalculatorService {
         String targetCurrencyName = currencyDataSource.createCurrencyFromCode(target).getCurrency();
         double targetCurrencyMid = currencyDataSource.createCurrencyFromCode(target).getMid();
         double result = calculator.calculate(baseCurrencyMid, targetCurrencyMid, amount);
-        return new CalculatorResult(baseCurrencyName, targetCurrencyName, result, amount);
+        return new CalculatorResult(baseCurrencyName, targetCurrencyName, amount, result);
     }
 }
