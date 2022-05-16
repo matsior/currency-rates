@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header>
     <div>
-        <a href="${pageContext.request.contextPath}">LOGO</a>
+        <a href="${pageContext.request.contextPath}">4K</a>
         <c:choose>
             <c:when test="${empty pageContext.request.userPrincipal}">
                 <a href="${pageContext.request.contextPath}/login">ZALOGUJ</a>
@@ -18,7 +18,7 @@
         <ul>
             <li><a href="${pageContext.request.contextPath}/average">Kursy średnie</a></li>
             <li><a href="${pageContext.request.contextPath}/exchange">Kursy kupna i sprzedaży</a></li>
-            <li><a href="#">Kursy archiwalne</a></li>
+            <li><a href="${pageContext.request.contextPath}/archive">Kursy archiwalne</a></li>
             <li><a href="${pageContext.request.contextPath}/calculator">Przelicznik walut</a></li>
             <c:if test="${not empty pageContext.request.userPrincipal}">
                 <li><a href="${pageContext.request.contextPath}/mycurrencies">Moje waluty</a></li>

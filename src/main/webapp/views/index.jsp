@@ -22,11 +22,6 @@
                     <td>${currency.mid}</td>
                 </tr>
             </c:forEach>
-            <tr>
-                <td>ŚĄśłżłęó</td>
-                <td>ŚĄśłżłęó</td>
-                <td>ŚĄśłżłęó</td>
-            </tr>
         </table>
     <%@include file="../segments/footer.jspf"%>
 </body>

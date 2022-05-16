@@ -1,13 +1,11 @@
-package com.fourk.kursywalut4k.domain.rate;
+package com.fourk.kursywalut4k.domain.currency;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class ExtendedCurrency {
+public abstract class Currency {
     private String currency;
     private String code;
-    private Double bid;
-    private Double ask;
 }

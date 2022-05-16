@@ -8,7 +8,22 @@
 </head>
 <body>
 <%@include file="../segments/header.jspf"%>
-<h1>Twoje waluty</h1>
+<h1>Moje waluty</h1>
+
+<table border="1">
+    <tr>
+        <th>Nazwa</th>
+        <th>Kod</th>
+        <th>Wartość</th>
+    </tr>
+    <c:forEach var="currency" items="${rates}">
+        <tr>
+            <td>${currency.currency}</td>
+            <td>${currency.code}</td>
+            <td>${currency.mid}</td>
+        </tr>
+    </c:forEach>
+</table>
 
 <%@include file="../segments/footer.jspf"%>
 </body>

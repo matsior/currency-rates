@@ -7,10 +7,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-import java.security.Principal;
 
+@Slf4j
 @WebServlet("/login")
 @ServletSecurity(
         httpMethodConstraints = {
@@ -21,7 +22,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userPrincipalName = request.getUserPrincipal().getName();
-        System.out.println(userPrincipalName + " logged in");
+        log.info(userPrincipalName + " logged in");
         response.sendRedirect(request.getContextPath());
     }
 }

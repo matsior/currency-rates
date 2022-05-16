@@ -5,9 +5,11 @@ import com.fourk.kursywalut4k.domain.api.UserService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
+@Slf4j
 @WebServlet("/signup")
 public class SignupController extends HttpServlet {
     private final UserService userService = new UserService();
@@ -21,6 +23,7 @@ public class SignupController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserRegistration userRegistration = getUserData(request);
         userService.register(userRegistration);
+        log.info("new user registered {}", userRegistration);
         response.sendRedirect(request.getContextPath());
     }
 

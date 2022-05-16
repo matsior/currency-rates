@@ -1,7 +1,7 @@
 package com.fourk.kursywalut4k.client.home;
 
+import com.fourk.kursywalut4k.domain.api.BasicCurrencyDto;
 import com.fourk.kursywalut4k.domain.api.CurrencyService;
-import com.fourk.kursywalut4k.domain.rate.BasicCurrency;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +17,7 @@ public class HomeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<BasicCurrency> basicCurrencyList = currencyService.createBasicCurrencyList();
+        List<BasicCurrencyDto> basicCurrencyList = currencyService.getBasicCurrencies();
         request.setAttribute("rates", basicCurrencyList);
         request.getRequestDispatcher("views/index.jsp").forward(request, response);
     }

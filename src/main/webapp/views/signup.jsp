@@ -8,14 +8,14 @@
     <h1>Utwórz konto</h1>
     <form action="signup" method="post">
         <label for="username">Nick</label>
-        <input type="text" name="username" id="username">
+        <input type="text" name="username" id="username" required><br>
         <label for="email">Adres email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required><br>
         <label for="password">Hasło</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required><br>
         <input type="submit" value="Wyślij">
     </form>
-    <h1>Zarejestruj się</h1>
+    <a href="${pageContext.request.contextPath}">Powrót do strony głównej</a>
     <%@ include file="../segments/footer.jspf"%>
 </body>
 </html>
