@@ -1,14 +1,13 @@
 package com.fourk.kursywalut4k.service;
 
+import com.fourk.kursywalut4k.dao.CurrencyDao;
+import com.fourk.kursywalut4k.datasource.CurrencyDataSource;
 import com.fourk.kursywalut4k.dto.BasicCurrencyDto;
 import com.fourk.kursywalut4k.dto.ExtendedCurrencyDto;
 import com.fourk.kursywalut4k.model.currency.CurrencyBasic;
-import com.fourk.kursywalut4k.dao.CurrencyDao;
 import com.fourk.kursywalut4k.model.currency.CurrencyExtended;
-import com.fourk.kursywalut4k.datasource.CurrencyDataSource;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class CurrencyService {

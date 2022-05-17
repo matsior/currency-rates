@@ -10,8 +10,4 @@ public class CurrencyBasic extends Currency{
         super(currency, code);
         this.mid = mid;
     }
-
-    public Double getMid() {
-        return mid;
-    }
 }
