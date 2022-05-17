@@ -12,7 +12,11 @@
 
 <form action="archive" method="get">
     <label for="code">Kod waluty</label>
-    <input type="text" id="code" name="code" placeholder="GBP" required><br>
+    <select id="code" name="code" required>
+        <c:forEach var="currency" items="${requestScope.currencies}">
+            <option value="${currency.code}">${currency.currency}</option>
+        </c:forEach>
+    </select>
     <label for="date">Data</label>
     <input type="date" id="date" name="date" placeholder="2020-12-21" required><br>
     <input type="submit" value="Sprawdź">
