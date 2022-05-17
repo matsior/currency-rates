@@ -1,8 +1,8 @@
 package com.fourk.kursywalut4k.controller.userCurrencies;
 
 import com.fourk.kursywalut4k.dto.BasicCurrencyDto;
-import com.fourk.kursywalut4k.service.CurrencyService;
 import com.fourk.kursywalut4k.dto.UserDto;
+import com.fourk.kursywalut4k.service.CurrencyService;
 import com.fourk.kursywalut4k.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.HttpMethodConstraint;
@@ -44,8 +44,6 @@ public class UserCurrenciesController extends HttpServlet {
         String code = request.getParameter("code");
         currencyService.save(userId, code);
         log.info("user {} saved new currency ({})", userPrincipalName, code);
-        List<BasicCurrencyDto> basicCurrencies = currencyService.getBasicCurrencies();
-        request.setAttribute("rates", basicCurrencies);
-        request.getRequestDispatcher("views/index.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath());
     }
 }
