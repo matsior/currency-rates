@@ -22,10 +22,7 @@ CREATE TABLE users_currencies (
 INSERT INTO
     users (username, password, email)
 VALUES
-    ('mati', '1234', 'mati@gmail.com'),
-    ('pawel', '1234', 'pawel@gmail.com'),
-    ('patryk', '1234', 'patryk@gmail.com'),
-    ('radek', '1234', 'radek@gmail.com');
+    ('test', 'test', 'test@test.com');
 
 INSERT INTO
     users_currencies (user_id, currency_code)
