@@ -13,9 +13,10 @@ CREATE TABLE users (
 );
 
 CREATE TABLE users_currencies (
-    user_id INT PRIMARY KEY,
-    currency_code VARCHAR(3) NOT NULL PRIMARY KEY,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    user_id INT,
+    currency_code VARCHAR(3) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    PRIMARY KEY (user_id, currency_code)
 );
 
 INSERT INTO

@@ -11,11 +11,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @WebServlet("/mycurrencies")
 @ServletSecurity(
         httpMethodConstraints = {
@@ -33,5 +35,17 @@ public class UserCurrenciesController extends HttpServlet {
         List<BasicCurrencyDto> userCurrencies = currencyService.getUserCurrencies(user.get().getId());
         request.setAttribute("rates", userCurrencies);
         request.getRequestDispatcher("views/user_currencies.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String userPrincipalName = request.getUserPrincipal().getName();
+        Integer userId = userService.findByName(userPrincipalName).get().getId();
+        String code = request.getParameter("code");
+        currencyService.save(userId, code);
+        log.info("user {} saved new currency ({})", userPrincipalName, code);
+        List<BasicCurrencyDto> basicCurrencies = currencyService.getBasicCurrencies();
+        request.setAttribute("rates", basicCurrencies);
+        request.getRequestDispatcher("views/index.jsp").forward(request, response);
     }
 }

@@ -12,7 +12,7 @@ public class UserDao {
     public void saveUser(User user) {
         final String query = """
                 INSERT INTO
-                    user_account (nick, password, email)
+                    users (username, password, email)
                 VALUES
                     (?,?,?)
                 """;
@@ -30,11 +30,11 @@ public class UserDao {
     public Optional<User> findByUsername(String username) {
         final String query = """
                 SELECT
-                    id_user, nick, password, email
+                    id, username, password, email
                 FROM
-                    user_account
+                    users
                 WHERE
-                    nick = ?
+                    username = ?
                 """;
         try (PreparedStatement statement = DataBaseConnections.connectWithDataBase(query)) {
             statement.setString(1, username);
@@ -50,8 +50,8 @@ public class UserDao {
     }
 
     private User mapRow(ResultSet resultSet) throws SQLException {
-        int id = resultSet.getInt("id_user");
-        String username = resultSet.getString("nick");
+        int id = resultSet.getInt("id");
+        String username = resultSet.getString("username");
         String email = resultSet.getString("email");
         String password = resultSet.getString("password");
         return new User(id, username, email, password);

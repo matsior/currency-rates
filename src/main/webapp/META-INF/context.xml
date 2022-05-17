@@ -9,9 +9,9 @@
     <Realm className="org.apache.catalina.realm.DataSourceRealm"
            dataSourceName="jdbc/kursy_walut_4k"
            localDataSource="true"
-           userTable="user_account"
-           userNameCol="nick"
+           userTable="users"
+           userNameCol="username"
            userCredCol="password"
-           userRoleTable="user_account"
-           roleNameCol="role_name"/>
+           userRoleTable="users"
+           roleNameCol="role"/>
 </Context>

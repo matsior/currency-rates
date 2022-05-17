@@ -1,6 +1,6 @@
 package com.fourk.kursywalut4k.service;
 
-import com.fourk.kursywalut4k.dao.CurrencyDao;
+import com.fourk.kursywalut4k.dao.UsersCurrenciesDao;
 import com.fourk.kursywalut4k.datasource.CurrencyDataSource;
 import com.fourk.kursywalut4k.dto.BasicCurrencyDto;
 import com.fourk.kursywalut4k.dto.ExtendedCurrencyDto;
@@ -13,12 +13,13 @@ import java.util.stream.Collectors;
 public class CurrencyService {
 
     CurrencyDataSource currencyDataSource = new CurrencyDataSource();
-    CurrencyDao currencyDao = new CurrencyDao();
+    UsersCurrenciesDao usersCurrenciesDao = new UsersCurrenciesDao();
     CurrencyMapper currencyMapper = new CurrencyMapper();
 
     public List<BasicCurrencyDto> getUserCurrencies(int userId) {
-        return currencyDao.findUserSavedCurrenciesByUserId(userId)
+        return usersCurrenciesDao.findUserSavedCurrenciesByUserId(userId)
                 .stream()
+                .map(currencyDataSource::createCurrencyFromCode)
                 .map(currencyMapper::map)
                 .collect(Collectors.toList());
     }
@@ -40,6 +41,10 @@ public class CurrencyService {
     public BasicCurrencyDto getArchivalCurrency(String code, String date) {
         CurrencyBasic currencyBasic = currencyDataSource.createCurrencyFromCode(code, date);
         return currencyMapper.map(currencyBasic);
+    }
+
+    public void save(int userId, String currencyCode) {
+        usersCurrenciesDao.save(userId, currencyCode);
     }
 
     private static class CurrencyMapper {
