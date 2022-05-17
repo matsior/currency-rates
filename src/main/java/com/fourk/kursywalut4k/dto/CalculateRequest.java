@@ -5,9 +5,8 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class CalculatorResult {
-    private String baseCurrencyName;
-    private String targetCurrencyName;
+public class CalculateRequest {
+    private String base;
+    private String target;
     private double amount;
-    private double result;
 }
