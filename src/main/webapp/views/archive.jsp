@@ -18,7 +18,7 @@
         </c:forEach>
     </select>
     <label for="date">Data</label>
-    <input type="date" id="date" name="date" placeholder="2020-12-21" required><br>
+    <input type="date" id="date" name="date" required><br>
     <input type="submit" value="Sprawdź">
 </form>
 
@@ -36,7 +36,6 @@
         </tr>
     </table>
 </c:if>
-
 
 <%@include file="../segments/footer.jspf"%>
 </body>

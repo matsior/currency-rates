@@ -15,7 +15,7 @@
                 <th>Kod</th>
                 <th>Wartość</th>
             </tr>
-            <c:forEach var="currency" items="${rates}">
+            <c:forEach var="currency" items="${requestScope.rates}">
                 <tr>
                     <td>${currency.currency}</td>
                     <td>${currency.code}</td>

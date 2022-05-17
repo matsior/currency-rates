@@ -12,11 +12,19 @@
 
     <form action="calculator" method="post">
         <label for="base">Waluta początkowa</label>
-        <input type="text" name="base" id="base" required><br>
+        <select id="base" name="base" required>
+            <c:forEach var="currency" items="${requestScope.currencies}">
+                <option value="${currency.code}">${currency.currency}</option>
+            </c:forEach>
+        </select><br>
         <label for="amount">Kwota</label>
-        <input type="number" name="amount" id="amount" required><br>
+        <input type="number" name="amount" id="amount" step="0.01" required><br>
         <label for="target">Waluta końcowa</label>
-        <input type="text" name="target" id="target" required><br>
+        <select id="target" name="target" required>
+            <c:forEach var="currency" items="${requestScope.currencies}">
+                <option value="${currency.code}">${currency.currency}</option>
+            </c:forEach>
+        </select><br>
         <input type="submit" value="Wyślij">
     </form>
 
