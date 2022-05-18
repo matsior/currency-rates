@@ -23,6 +23,9 @@
             <c:if test="${not empty pageContext.request.userPrincipal}">
                 <li><a href="${pageContext.request.contextPath}/mycurrencies">Moje waluty</a></li>
             </c:if>
+            <c:if test='${not empty pageContext.request.userPrincipal and pageContext.request.isUserInRole("ADMIN")}'>
+                <li><a href="${pageContext.request.contextPath}/admin">Panel zarządzania</a></li>
+            </c:if>
         </ul>
     </nav>
 </header>

@@ -21,7 +21,8 @@ import java.util.Optional;
 @WebServlet("/mycurrencies")
 @ServletSecurity(
         httpMethodConstraints = {
-                @HttpMethodConstraint(value="GET", rolesAllowed = "USER")
+                @HttpMethodConstraint(value="GET", rolesAllowed = {"USER", "ADMIN"})
+
         }
 )
 public class UserCurrenciesController extends HttpServlet {

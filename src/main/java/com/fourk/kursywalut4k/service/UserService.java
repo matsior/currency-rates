@@ -5,7 +5,9 @@ import com.fourk.kursywalut4k.dto.UserRegistration;
 import com.fourk.kursywalut4k.model.user.User;
 import com.fourk.kursywalut4k.dao.UserDao;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class UserService {
     private final UserDao userDao = new UserDao();
@@ -19,6 +21,13 @@ public class UserService {
     public Optional<UserDto> findByName(String name) {
         return userDao.findByUsername(name)
                 .map(userMapper::map);
+    }
+
+    public List<UserDto> findAll() {
+        return userDao.findAll()
+                .stream()
+                .map(userMapper::map)
+                .collect(Collectors.toList());
     }
 
     private static class UserMapper{
