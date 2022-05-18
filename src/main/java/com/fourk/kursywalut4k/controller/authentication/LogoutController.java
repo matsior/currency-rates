@@ -14,7 +14,7 @@ public class LogoutController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userPrincipalName = request.getUserPrincipal().getName();
         request.logout();
-        log.info(userPrincipalName + " logged out");
+        log.info("user {} logged out", userPrincipalName);
         response.sendRedirect(request.getContextPath());
     }
 }

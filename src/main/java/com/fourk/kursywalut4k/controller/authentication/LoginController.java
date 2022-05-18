@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userPrincipalName = request.getUserPrincipal().getName();
-        log.info(userPrincipalName + " logged in");
+        log.info("user {} logged in", userPrincipalName);
         response.sendRedirect(request.getContextPath());
     }
 }

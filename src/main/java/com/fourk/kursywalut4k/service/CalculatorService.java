@@ -2,7 +2,7 @@ package com.fourk.kursywalut4k.service;
 
 import com.fourk.kursywalut4k.dto.CalculateRequest;
 import com.fourk.kursywalut4k.dto.CalculateResult;
-import com.fourk.kursywalut4k.calculator.Calculator;
+import com.fourk.kursywalut4k.utils.Calculator;
 import com.fourk.kursywalut4k.datasource.CurrencyDataSource;
 import com.fourk.kursywalut4k.model.currency.CurrencyBasic;
 

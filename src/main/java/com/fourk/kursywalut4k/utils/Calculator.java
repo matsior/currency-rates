@@ -1,4 +1,4 @@
-package com.fourk.kursywalut4k.calculator;
+package com.fourk.kursywalut4k.utils;
 
 public class Calculator {
 

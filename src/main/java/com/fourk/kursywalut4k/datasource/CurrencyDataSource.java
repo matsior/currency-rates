@@ -1,6 +1,6 @@
 package com.fourk.kursywalut4k.datasource;
 
-import com.fourk.kursywalut4k.connections.APIConnections;
+import com.fourk.kursywalut4k.utils.APIConnections;
 import com.fourk.kursywalut4k.model.currency.CurrencyBasic;
 import com.fourk.kursywalut4k.model.currency.CurrencyExtended;
 import org.json.JSONArray;
@@ -10,10 +10,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
-import static com.fourk.kursywalut4k.connections.APIConnections.createStringFromJson;
+import static com.fourk.kursywalut4k.utils.APIConnections.createStringFromJson;
 
 public class CurrencyDataSource {
 

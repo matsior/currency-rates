@@ -1,6 +1,6 @@
 package com.fourk.kursywalut4k.dao;
 
-import com.fourk.kursywalut4k.connections.DataBaseConnections;
+import com.fourk.kursywalut4k.utils.DataBaseConnections;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

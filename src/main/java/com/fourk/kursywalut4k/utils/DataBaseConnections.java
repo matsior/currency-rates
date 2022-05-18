@@ -1,4 +1,4 @@
-package com.fourk.kursywalut4k.connections;
+package com.fourk.kursywalut4k.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
