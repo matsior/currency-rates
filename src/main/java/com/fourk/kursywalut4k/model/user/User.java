@@ -11,6 +11,7 @@ public class User {
     private String username;
     @NonNull
     private String email;
+    @Setter
     @NonNull
     private String password;
 }

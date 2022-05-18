@@ -4,6 +4,7 @@ import com.fourk.kursywalut4k.dto.UserDto;
 import com.fourk.kursywalut4k.dto.UserRegistration;
 import com.fourk.kursywalut4k.model.user.User;
 import com.fourk.kursywalut4k.dao.UserDao;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +16,7 @@ public class UserService {
 
     public void register(UserRegistration userRegistration) {
         User userToSave = userMapper.map(userRegistration);
+        hashPasswordWithSha256(userToSave);
         userDao.saveUser(userToSave);
     }
 
@@ -28,6 +30,11 @@ public class UserService {
                 .stream()
                 .map(userMapper::map)
                 .collect(Collectors.toList());
+    }
+
+    private void hashPasswordWithSha256(User user) {
+        String sha256Password = DigestUtils.sha256Hex(user.getPassword());
+        user.setPassword(sha256Password);
     }
 
     private static class UserMapper{

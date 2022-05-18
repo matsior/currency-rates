@@ -11,4 +11,3 @@ public abstract class PasswordValidation {
         return true;
     }
 }
-

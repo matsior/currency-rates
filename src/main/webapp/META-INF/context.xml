@@ -13,5 +13,13 @@
            userNameCol="username"
            userCredCol="password"
            userRoleTable="users"
-           roleNameCol="role"/>
+           roleNameCol="role">
+        <CredentialHandler className="org.apache.catalina.realm.NestedCredentialHandler">
+            <CredentialHandler
+                    className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+                    algorithm="SHA-256" />
+            <CredentialHandler
+                    className="org.apache.catalina.realm.MessageDigestCredentialHandler"/>
+        </CredentialHandler>
+    </Realm>
 </Context>
