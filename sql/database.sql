@@ -25,6 +25,11 @@ VALUES
     ('test', 'test', 'test@test.com');
 
 INSERT INTO
+    users (username, password, email, role)
+VALUES
+    ('admin', 'admin', 'admin@admin.com', 'ADMIN');
+
+INSERT INTO
     users_currencies (user_id, currency_code)
 VALUES
     (1, 'USD'),
