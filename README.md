@@ -5,16 +5,19 @@
 * [Setup](#setup)
 
 ## General info
-This project.....
+This application allows you to follow the current exchange rates.
 	
 ## Technologies
 Project is created with:
 * Java 17
 * Jakarta EE
+* Jakarta Servlet
 * Tomcat 10
 * Maven 
 * MySql
 * JDBC
+* Lombok
+* json.org
 
 ## Functionalities
 * downloading up-to-date exchange rates from [http://api.nbp.pl](http://api.nbp.pl)
@@ -30,7 +33,7 @@ Project is created with:
 To run this project:
 1. create MySQL database using database.sql file
 2. overwrite database username and password in DataBaseConnections.java and context.xml
-3. build .war with maven
+3. build .war file with maven
 ```
 $ mvn clean install
 ```
