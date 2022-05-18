@@ -12,6 +12,7 @@ Project is created with:
 * Java 17
 * Jakarta EE
 * Jakarta Servlet
+* JSP
 * Tomcat 10
 * Maven 
 * MySql
