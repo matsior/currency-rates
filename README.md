@@ -39,4 +39,4 @@ To run this project:
 $ mvn clean install
 ```
 4. Deploy on Tomcat 10 server
-5. You can log in using (username: test, password: test) or (username: admin, password:admin)
+5. You can log in using (username: test, password: test) or (username: admin, password: admin)
