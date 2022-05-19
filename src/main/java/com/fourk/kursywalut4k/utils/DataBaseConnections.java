@@ -5,10 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import static com.fourk.kursywalut4k.utils.PropertiesSupplier.getProperty;
+
 public class DataBaseConnections {
-    public static final String JDBC_URL = "jdbc:mysql://localhost:3306/kursy_walut_4k?serverTimezone=UTC";
-    public static final String DB_USER_NAME = "root";
-    public static final String DB_PASSWORD = "1234";
+    public static final String JDBC_URL = getProperty("db.url");
+    public static final String DB_USER_NAME = getProperty("db.user");
+    public static final String DB_PASSWORD = getProperty("db.password");
 
     public static PreparedStatement connectWithDataBase(String query) throws SQLException {
         Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER_NAME, DB_PASSWORD);

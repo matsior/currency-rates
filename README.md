@@ -33,7 +33,7 @@ Project is created with:
 ## Setup
 To run this project:
 1. create MySQL database using database.sql file
-2. overwrite database username and password in DataBaseConnections.java and context.xml
+2. overwrite database properties in config.properties and context.xml
 3. build .war file with maven
 ```
 $ mvn clean install
