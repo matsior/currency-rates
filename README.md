@@ -1,7 +1,10 @@
+# Currency4K
+
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Functionalities](#Functionalities)
+* [ToDo](#ToDo)
 * [Setup](#setup)
 
 ## General info
@@ -29,6 +32,11 @@ Project is created with:
 * saving users and "favourite currencies" in MySQL database
 * password encryption using SHA-256 algorithm
 * admin panel for users management
+
+## ToDo
+- [ ] switch double variables to BigDecimal
+- [ ] use Hibernate
+- [ ] rewrite project using Spring framework
 	
 ## Setup
 To run this project:
