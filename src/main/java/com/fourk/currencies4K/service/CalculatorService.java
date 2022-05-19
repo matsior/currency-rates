@@ -3,7 +3,7 @@ package com.fourk.currencies4K.service;
 import com.fourk.currencies4K.dto.CalculateRequest;
 import com.fourk.currencies4K.dto.CalculateResult;
 import com.fourk.currencies4K.utils.Calculator;
-import com.fourk.currencies4K.datasource.CurrencyDataSource;
+import com.fourk.currencies4K.utils.CurrencyDataSource;
 import com.fourk.currencies4K.model.currency.CurrencyBasic;
 
 public class CalculatorService {

@@ -1,7 +1,7 @@
 package com.fourk.currencies4K.service;
 
 import com.fourk.currencies4K.dao.UsersCurrenciesDao;
-import com.fourk.currencies4K.datasource.CurrencyDataSource;
+import com.fourk.currencies4K.utils.CurrencyDataSource;
 import com.fourk.currencies4K.dto.BasicCurrencyDto;
 import com.fourk.currencies4K.dto.ExtendedCurrencyDto;
 import com.fourk.currencies4K.model.currency.CurrencyBasic;

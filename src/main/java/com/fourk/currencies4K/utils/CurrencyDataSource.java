@@ -1,4 +1,4 @@
-package com.fourk.currencies4K.datasource;
+package com.fourk.currencies4K.utils;
 
 import com.fourk.currencies4K.utils.APIConnector;
 import com.fourk.currencies4K.model.currency.CurrencyBasic;
