@@ -13,6 +13,7 @@
         <input type="email" name="email" id="email" required><br>
         <label for="password">Hasło</label>
         <input type="password" name="password" id="password" required><br>
+        <p>(Minimum 8 znaków, duża litera, mała litera, cyfra, znak specjalny)</p>
         <input type="submit" value="Wyślij">
     </form>
     <a href="${pageContext.request.contextPath}">Powrót do strony głównej</a>
