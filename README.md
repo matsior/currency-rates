@@ -1,4 +1,4 @@
-# Currency4K
+# Currency Rates
 
 ## Table of contents
 * [General info](#general-info)
