@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header>
     <div>
-        <a href="${pageContext.request.contextPath}">4K</a>
+        <a href="${pageContext.request.contextPath}">Currency App</a>
         <c:choose>
             <c:when test="${empty pageContext.request.userPrincipal}">
                 <a href="${pageContext.request.contextPath}/login">ZALOGUJ</a>

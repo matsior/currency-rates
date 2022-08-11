@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <footer>
     <hr>
-    <p>Kursy walut 4K ®, developed by fourk</p>
-    <p><i>Paweł & Patryk & Radek & Mateusz</i></p>
+    <p>Kursy walut 4K ®, developed by Matsior</p>
     <p>2022</p>
 </footer>
